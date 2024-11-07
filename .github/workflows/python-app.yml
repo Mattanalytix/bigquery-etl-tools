@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 env:
-  BUCKET: '${{ secrets.BUCKET }}'
+  BUCKET: 'bigquery-etl-tools'
 
 jobs:
   build:
