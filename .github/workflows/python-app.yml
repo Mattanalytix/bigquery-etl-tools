@@ -23,10 +23,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    # https://github.com/google-github-actions/auth/blob/main/README.md#direct-wif
     - name: Authenticate with Google Cloud
       uses: 'google-github-actions/auth@v2'
       with:
-        credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+        project_id: 'football-engineering-dev-001'
+        workload_identity_provider: 'projects/399024497529/locations/global/workloadIdentityPools/github/providers/my-repo'
     - name: Set up Python 3.13
       uses: actions/setup-python@v3
       with:
