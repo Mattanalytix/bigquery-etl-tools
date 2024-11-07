@@ -1,5 +1,5 @@
 {
     "recommendations": [
-        "ms-python.pylint"
+        "ms-python.flake8"
     ]
 }
