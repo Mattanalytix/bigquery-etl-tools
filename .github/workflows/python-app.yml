@@ -30,8 +30,8 @@ jobs:
     - name: Authenticate with Google Cloud
       uses: 'google-github-actions/auth@v2'
       with:
-        project_id: 'football-engineering-dev-001'
-        workload_identity_provider: 'projects/399024497529/locations/global/workloadIdentityPools/github/providers/my-repo'
+        service_account: '${{ secrets.SA_EMAIL }}'
+        workload_identity_provider: '${{ secrets.WIT_PROVIDER }}'
     - name: Set up Python 3.13
       uses: actions/setup-python@v3
       with:
