@@ -18,10 +18,10 @@ Setup environment for local development:
 ```
 conda create -n bigquery_etl_tools pip
 conda activate bigquery_etl_tools
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
-Optionally install for jupyter notebooks
+Optionally, install `ipykernel` if developing in jupyter notebooks:
 
 ```
 pip install ipykernel
