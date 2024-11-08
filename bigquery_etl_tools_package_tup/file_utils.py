@@ -1,4 +1,4 @@
-"""Module providing helper functions for working with files related to etl 
+"""Module providing helper functions for working with files related to etl
 processes and google cloud platform"""
 
 import logging
@@ -6,7 +6,7 @@ import logging
 
 def split_bucket_blob(bucket_dir: str) -> tuple[str, str]:
     """
-    Split a google cloud storage path into the bucket name and blob directory.  
+    Split a google cloud storage path into the bucket name and blob directory.
     Name must be in the format bucketname:blobdir
     @param bucket_dir The path to the dir in the bucket in the
         form bucketname:blobdir

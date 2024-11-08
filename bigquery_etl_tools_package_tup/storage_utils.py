@@ -1,24 +1,12 @@
 """Module providing helper functions for working with google cloud storage"""
 
 import logging
+import polars as pl
 from google.cloud import storage
 from google.cloud.storage import Blob
 from google.cloud.exceptions import Forbidden
-import polars as pl
 
-
-FILE_TYPE_CONFIG = {
-    'csv': {
-        'dataframe_write_function': [pl.DataFrame.write_csv, {
-            'datetime_format': '%Y-%m-%d %H:%M:%S', 'date_format': '%Y-%m-%d'
-        }],
-        'blob_type': 'text/csv'
-    },
-    'json': {
-        'dataframe_write_function': [pl.DataFrame.write_ndjson, {}],
-        'blob_type': 'text/json'
-    }
-}
+from .config import FILE_TYPE_CONFIG
 
 
 # google.cloud.storage wrappers
@@ -70,7 +58,7 @@ def dataframe_to_storage(
         bucket_name: str,
         blob_name: str,
         file_type: str
-        ) -> None:
+        ) -> storage.Blob:
     """
     Upload a dataframe to google cloud storage
     @param storage_client The google.cloud.storage.Client object
@@ -93,3 +81,5 @@ def dataframe_to_storage(
             **config['dataframe_write_function'][1]),
         content_type=config['blob_type']
     )
+
+    return blob

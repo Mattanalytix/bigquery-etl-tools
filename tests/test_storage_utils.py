@@ -7,7 +7,8 @@ import polars as pl
 from google.cloud import storage
 from google.cloud.storage import Blob
 
-from bigquery_etl_tools_package_tup.storage_utils import FILE_TYPE_CONFIG, dataframe_to_storage
+from bigquery_etl_tools_package_tup.storage_utils import dataframe_to_storage
+from bigquery_etl_tools_package_tup.config import FILE_TYPE_CONFIG
 
 
 BUCKET_NAME = os.environ['BUCKET']
@@ -21,7 +22,7 @@ test_df = pl.DataFrame(
         "fruits": ["banana", "banana", "apple", "apple", "banana"],
         "B": [5, 4, 3, 2, 1],
         "cars": ["beetle", "audi", "beetle", "beetle", "beetle"],
-        "test_dt": [datetime(2024,1,1)] * 5
+        "test_dt": [datetime(2024, 1, 1)] * 5
     }
 )
 
