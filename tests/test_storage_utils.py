@@ -11,13 +11,9 @@ from bigquery_etl_tools_package_tup.storage_utils import dataframe_to_storage
 from bigquery_etl_tools_package_tup.config import FILE_TYPE_CONFIG
 
 
-PROJECT_NAME = os.environ['PROJECT']
 BUCKET_NAME = os.environ['BUCKET']
 
-storage_client = storage.Client(
-    project = PROJECT_NAME
-)
-
+storage_client = storage.Client()
 bucket = storage_client.get_bucket(BUCKET_NAME)
 
 test_df = pl.DataFrame(
