@@ -43,4 +43,6 @@ pytest # full run
 pytest tests/MODULE_NAME.py # module run
 ```
 
-@TODO examples
+## Examples
+
+See `notebook.ipynb` for example use cases.
