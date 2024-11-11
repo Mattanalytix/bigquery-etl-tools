@@ -13,21 +13,19 @@ def dataframe_to_bigquery(
         dataframe: pl.DataFrame,
         bucket_name: str,
         blob_name: str,
-        dataset_name: str,
-        table_name: str,
+        table_id: str,
         file_type: str,
         job_config: bigquery.LoadJobConfig = bigquery.LoadJobConfig(
             write_disposition='WRITE_TRUNCATE',
             autodetect=True
         )
-        ) -> tuple[storage.Blob, bigquery.TableReference]:
+        ) -> tuple[storage.Blob, bigquery.Table]:
     """
     Load a dataframe into a bigquery table, via cloud storage
     @param dataframe The dataframe to load
     @param bucket_name The name of the bucket to load from
     @param blob_name The name of the blob to load from
-    @param dataset_name The name of the dataset to load into
-    @param table_name The name of the table to load into
+    @param table_id The id of the table format dataset.table
     @param file_type The type of file to load (csv, json)
     @param job_config The job config
     @return A tuple of the blob and load job
@@ -54,8 +52,7 @@ def dataframe_to_bigquery(
     table = storage_to_bigquery(
         blob,
         bigquery_client,
-        dataset_name,
-        table_name,
+        table_id,
         job_config
     )
 
