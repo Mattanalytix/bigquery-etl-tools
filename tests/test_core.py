@@ -63,3 +63,4 @@ def test_dataframe_to_bigquery_json():
     )
     assert blob.exists(), f'Blob {blob.name} does not exist'
     assert table_exists(table), f'Table {table.table_id} does not exist'
+    assert datetime.timestamp(table.modified) - now_ts > 0, 'Table not updated'
