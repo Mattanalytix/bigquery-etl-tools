@@ -3,7 +3,7 @@
 from bigquery_etl_tools_package_tup.file_utils import split_bucket_blob
 
 
-### Test split_bucket_blob function
+# Test split_bucket_blob function
 
 def test_split_bucket_blob_bucket_only():
     """Test the split_bucket_blob function with a bucket only"""
