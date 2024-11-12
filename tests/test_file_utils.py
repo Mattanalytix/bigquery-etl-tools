@@ -1,6 +1,6 @@
 """Module for testing file_utils.py"""
 
-from bigquery_etl_tools_package_tup.file_utils import split_bucket_blob
+from bigquery_etl_tools.file_utils import split_bucket_blob
 
 
 # Test split_bucket_blob function

@@ -6,7 +6,7 @@ from datetime import datetime
 import polars as pl
 from google.cloud import storage
 
-from bigquery_etl_tools_package_tup.config import FILE_TYPE_CONFIG
+from bigquery_etl_tools.config import FILE_TYPE_CONFIG
 
 
 BUCKET_NAME = os.environ['BUCKET']

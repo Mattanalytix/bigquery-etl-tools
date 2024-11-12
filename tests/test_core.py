@@ -1,4 +1,4 @@
-"""Module for testing bigquery_etl_tools_package_tup core functions"""
+"""Module for testing bigquery_etl_tools core functions"""
 
 import os
 from datetime import datetime, timezone
@@ -6,11 +6,11 @@ import polars as pl
 from google.cloud import storage, bigquery
 
 
-from bigquery_etl_tools_package_tup import (
+from bigquery_etl_tools import (
     dataframe_to_bigquery,
     autodetect_dataframe_schema
 )
-from bigquery_etl_tools_package_tup.bigquery_utils import table_exists
+from bigquery_etl_tools.bigquery_utils import table_exists
 
 
 BUCKET_NAME = os.environ['BUCKET']
