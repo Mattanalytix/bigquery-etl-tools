@@ -32,7 +32,8 @@ pip install ipykernel
 The tests for this package are created using [pytest](https://docs.pytest.org/), for some of the tests you will need to specifiy variables which are specfic to your GCP environment. To do that create a `.env` file in the root of the repository and set the following values:
 
 ```.env
-BUCKET=bucketname
+BUCKET='bucketname'
+DATASET='datasetname'
 ```
 
 To run pytest run the following command on the command line:
@@ -43,4 +44,6 @@ pytest # full run
 pytest tests/MODULE_NAME.py # module run
 ```
 
-@TODO examples
+## Examples
+
+See `notebook.ipynb` for example use cases.
