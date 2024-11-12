@@ -44,6 +44,26 @@ pytest # full run
 pytest tests/MODULE_NAME.py # module run
 ```
 
+## Build the Package
+
+See the package here: https://pypi.org/project/bigquery-etl-tools/
+
+To build the package using `twine` run the following on the command line in the root directory:
+
+```cmd
+python setup.py sdist bdist_wheel # build the distribution
+twine check dist/* # check everything has built correctly
+twine upload dist/* # upload to pypi
+```
+
+To install the package into an environment run:
+
+```cmd
+pip install bigquery-etl-tools
+```
+
+@TODO turn this into github action
+
 ## Examples
 
 See `notebook.ipynb` for example use cases.

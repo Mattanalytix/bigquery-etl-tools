@@ -30,6 +30,7 @@ def _inner_dataframe_to_bigquery(
     @param dataframe The dataframe to load
     @param bucket_name The name of the bucket to load from
     @param blob_name The name of the blob to load from
+        (e.g. full/path/to/blob.csv)
     @param table_id The id of the table format dataset.table
     @param file_type The type of file to load (csv, json)
     @param job_config The job config
@@ -69,11 +70,10 @@ def dataframe_to_bigquery(
         ) -> tuple[storage.Blob, bigquery.Table]:
     """
     Load a dataframe into a bigquery table, via cloud storage
-    @param storage_client The google.cloud.storage.Client object
-    @param bigquery_client The google.cloud.bigquery.Client object
     @param dataframe The dataframe to load
     @param bucket_name The name of the bucket to load from
     @param blob_name The name of the blob to load from
+        (e.g. full/path/to/blob.csv)
     @param table_id The id of the table format dataset.table
     @param file_type The type of file to load (csv, json)
     @param job_config The job config
@@ -109,6 +109,7 @@ def autodetect_dataframe_schema(
     @param dataframe The dataframe to autodetect
     @param bucket_name The name of the bucket to load from
     @param blob_name The name of the blob to load from
+        (e.g. full/path/to/blob.csv)
     @param table_id The id of the table format dataset.table
     @param file_type The type of file to load (csv, json)
     @param destination_dir The directory to write the schema to

@@ -38,6 +38,7 @@ def get_bucket_blob_wrapper(
     @param storage_client The google.cloud.storage.Client object
     @param bucket_name The name of the bucket to retrieve
     @param blob_name The name of the blob to retrieve
+        (e.g. full/path/to/blob.csv)
     @return A tuple of the bucket and blob objects
     """
     logging.info('Retrieving blob %s:%s',
