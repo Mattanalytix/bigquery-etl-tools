@@ -32,6 +32,7 @@ pip install ipykernel
 The tests for this package are created using [pytest](https://docs.pytest.org/), for some of the tests you will need to specifiy variables which are specfic to your GCP environment. To do that create a `.env` file in the root of the repository and set the following values:
 
 ```.env
+GCLOUD_PROJECT='project_id'
 BUCKET='bucketname'
 DATASET='datasetname'
 ```
