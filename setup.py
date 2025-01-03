@@ -9,7 +9,7 @@ with open(path.join(working_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='bigquery_etl_tools',
-    version='0.0.2',
+    version='0.0.4',
     url='https://github.com/Mattanalytix/bigquery-etl-tools',
     author='mattanalytix',
     author_email='info@mattanalytix.com',
